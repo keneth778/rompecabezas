@@ -1,4 +1,23 @@
-.div_tablero {
-    background-color: rgb(255, 0, 255);
+.divTablero {
+    background-color: white;
+
+    display: grid;
+    grid-template-columns: repeat(7,12rem);
+    grid-template-rows: repeat(4,15rem);
+    gap: 2rem;
+    padding: 3rem;
+}
+
+.carta {
+    border: 0.1rem solid black;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+
+    -webkit-box-shadow: 7px 7px 10px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 7px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: 7px 7px 10px 0px rgba(0,0,0,0.75);
 }
 
