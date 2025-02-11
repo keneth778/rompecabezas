@@ -21,3 +21,11 @@
     box-shadow: 7px 7px 10px 0px rgba(0,0,0,0.75);
 }
 
+.carta:hover{
+    background-color: purple;
+    transition: 1s;
+}
+.marcado{
+    background-color: blue;
+    transition: 1s;
+}

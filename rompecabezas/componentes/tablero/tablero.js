@@ -13,10 +13,9 @@ function cargarCartas(todasLasCartas){
 
     let div = document.createElement('div')
     div.className = "divTablero"
-    
-    todasLasCartas.forEach((letra)=>{div.appendChild(item(letra))})
 
-
+    todasLasCartas.forEach((letra)=>
+        {div.appendChild(item(letra))})
     return div
 }
 
