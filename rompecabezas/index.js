@@ -15,8 +15,17 @@ div_tablero.className = "div_tablero";
 contenedor.appendChild(div_tablero);
 div_tablero.appendChild(cargarCartas(todasLasCartas));
 
+
+
 let progreso = document.createElement('div');
 progreso.className = "div_progreso";
 contenedor.appendChild(progreso);
 
 DOM.appendChild(contenedor);
+
+let todasLasCartasDelDOM = document.querySelectorAll('.carta')
+todasLasCartasDelDOM.forEach(cadaCarta => {
+    cadaCarta.addEventListener("click", () => {
+        cadaCarta.classList.add("marcado")  ; 
+    });
+});
