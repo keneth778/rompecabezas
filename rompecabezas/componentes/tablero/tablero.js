@@ -1,22 +1,34 @@
-import { todasLasCartas } from "./data.js"
+import { todasLasCartas } from "./data.js";
+import { mezclarCartas } from "./itemcarta.js";
 
-function item(contenido){
-    let div = document.createElement('div')
-    div.innerText = contenido
-    div.className = "carta"
+function item(contenido) {
+    let div = document.createElement('div');
+    div.className = "carta volteada"; 
 
-    return div
+    let frente = document.createElement('div');
+    frente.className = "cara frente";
+    frente.innerText = contenido; 
+
+    let dorso = document.createElement('div');
+    dorso.className = "cara dorso";
+    dorso.innerText = "?"; 
+
+    div.appendChild(frente);
+    div.appendChild(dorso);
+
+    return div;
 }
 
+function crearTablero() {
+    let div = document.createElement('div');
+    div.className = "divTablero";
 
-function cargarCartas(todasLasCartas){
+    let cartasMezcladas = mezclarCartas(todasLasCartas); // Se mezclan aquí
+    cartasMezcladas.forEach((letra) => {
+        div.appendChild(item(letra));
+    });
 
-    let div = document.createElement('div')
-    div.className = "divTablero"
-
-    todasLasCartas.forEach((letra)=>
-        {div.appendChild(item(letra))})
-    return div
+    return div;
 }
 
-export { cargarCartas };
+export { crearTablero };
