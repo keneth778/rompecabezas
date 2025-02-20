@@ -1,4 +1,4 @@
-/* tablero.css*/
+/* tablero.css */
 .divTablero {
     background-color: white;
     display: grid;
@@ -36,21 +36,22 @@
 /* Cara frontal */
 .cara.frente {
     background-color: antiquewhite;
-    color: white;
+    color: black; /* Cambiado a negro para mejor visibilidad */
+    transform: rotateY(180deg); /* Inicialmente girada */
 }
 
 /* Cara trasera */
 .cara.dorso {
     background-color: blue;
     color: white;
-    transform: rotateY(180deg); /* Inicialmente girada */
+    transform: rotateY(0deg); /* Inicialmente visible */
 }
 
 /* Clase para voltear la carta */
 .carta.volteada .cara.frente {
-    transform: rotateY(180deg); /* Gira la cara frontal */
+    transform: rotateY(0deg); /* Muestra la cara frontal */
 }
 
 .carta.volteada .cara.dorso {
-    transform: rotateY(0deg); /* Gira la cara trasera */
+    transform: rotateY(180deg); /* Oculta la cara trasera */
 }

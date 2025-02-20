@@ -1,5 +1,5 @@
+// index.js
 import { crearTablero } from "./rompecabezas/componentes/tablero/tablero.js";
-import { mostrarCartas } from "./rompecabezas/componentes/tablero/mostrarCartas.js";
 import "./rompecabezas/componentes/header/header.js";
 
 function cargarDOM() {
@@ -21,8 +21,6 @@ function cargarDOM() {
     contenedor.appendChild(progreso);
 
     DOM.appendChild(contenedor);
-
-    setTimeout(mostrarCartas, 100); // Espera un poco para asegurarse de que las cartas ya están en el DOM
 }
 
 cargarDOM();

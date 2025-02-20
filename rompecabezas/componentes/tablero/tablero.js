@@ -1,17 +1,18 @@
+// tablero.js
 import { todasLasCartas } from "./data.js";
-import { mezclarCartas } from "./itemcarta.js";
+import { mezclarCartas, mostrarCartas } from "./funcionesCartas.js";
 
 function item(contenido) {
     let div = document.createElement('div');
-    div.className = "carta volteada"; 
+    div.className = "carta"; // Inicialmente sin la clase "volteada"
 
     let frente = document.createElement('div');
     frente.className = "cara frente";
-    frente.innerText = contenido; 
+    frente.innerText = contenido;
 
     let dorso = document.createElement('div');
     dorso.className = "cara dorso";
-    dorso.innerText = "?"; 
+    dorso.innerText = "?";
 
     div.appendChild(frente);
     div.appendChild(dorso);
@@ -19,16 +20,17 @@ function item(contenido) {
     return div;
 }
 
-function crearTablero() {
+export function crearTablero() {
     let div = document.createElement('div');
     div.className = "divTablero";
 
-    let cartasMezcladas = mezclarCartas(todasLasCartas); // Se mezclan aquí
+    let cartasMezcladas = mezclarCartas(todasLasCartas); // Mezcla las cartas
     cartasMezcladas.forEach((letra) => {
-        div.appendChild(item(letra));
+        div.appendChild(item(letra)); // Crea las cartas en el tablero
     });
+
+    // Llama a mostrarCartas después de crear el tablero
+    setTimeout(mostrarCartas, 100);
 
     return div;
 }
-
-export { crearTablero };
